@@ -12,17 +12,22 @@ struct WinnerView: View {
 
     @State private var quality = Int.random(in: 1...5)
     var body: some View {
+        ZStack{
+            LinearGradient(colors: [.blue], startPoint: .top, endPoint: .bottom)
+                .ignoresSafeArea()
         VStack(spacing: 50) {
             VStack {
                 HStack {
                     ForEach(0..<quality) { _ in
                         GoldenStarView()
+                            .rotation3DEffect(.init(degrees: startAnimation ? 0 : -70), axis: (x: 1, y: 0, z: 0), anchor: .center)
+                            .scaleEffect(startAnimation ? 1 : 0.00001)
+                            .animation(.interactiveSpring(response: 1, dampingFraction: 0.7, blendDuration: 0.5).delay(0.9), value: startAnimation)
                     }
                 }
 
                 IconView(startAnimation: startAnimation, quality: quality)
 
-                
                 Text(quality > 2 ? "Winner!" : "Loser!")
                     .frame(width: 300)
                     .foregroundColor(quality > 2 ? .green : .red)
@@ -31,11 +36,9 @@ struct WinnerView: View {
                     .rotation3DEffect(.init(degrees: startAnimation ? 0 : -70), axis: (x: 1, y: 0, z: 0), anchor: .center)
                     .scaleEffect(startAnimation ? 1 : 0.00001)
                     .animation(.interactiveSpring(response: 1, dampingFraction: 0.7, blendDuration: 0.5).delay(0.9), value: startAnimation)
-                
             }
 
             Button {
-                
                 startAnimation.toggle()
             } label: {
                 Text("Start")
@@ -47,8 +50,8 @@ struct WinnerView: View {
                     .shadow(radius: 10)
             }
 
-
         }
+    }
     }
 }
 
