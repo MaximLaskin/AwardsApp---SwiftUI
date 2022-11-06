@@ -39,6 +39,7 @@ struct PathView: View {
                 .foregroundColor(.white)
                 .scaleEffect(nearLine / 100)
                 .offset(x: -size / 7.25)
+            
         }
     }
 }
