@@ -12,7 +12,7 @@ struct AwardsView: View {
         NavigationView {
             VStack {
                 ScrollView {
-                    IconView(startAnimation: true, quality: 5)
+                    IconView(color: .orange, startAnimation: true, quality: 5)
                         .frame(width: 350, height: 350)
                     GradientRectangles()
                         .frame(width: 250, height: 250)

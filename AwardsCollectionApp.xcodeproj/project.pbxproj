@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431E4DE729194FA200F7D513 /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431E4DE629194FA200F7D513 /* TextView.swift */; };
 		435905982916B97F00CC7B06 /* WinnerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 435905972916B97F00CC7B06 /* WinnerView.swift */; };
 		43697DB72916FB8200834983 /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43697DB62916FB8200834983 /* IconView.swift */; };
 		A89D0931267B76D400C1FB66 /* AwardsCollectionAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89D0930267B76D400C1FB66 /* AwardsCollectionAppApp.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		431E4DE629194FA200F7D513 /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		435905972916B97F00CC7B06 /* WinnerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinnerView.swift; sourceTree = "<group>"; };
 		43697DB62916FB8200834983 /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		A89D092D267B76D400C1FB66 /* AwardsCollectionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AwardsCollectionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -72,6 +74,7 @@
 				A89D0941267B77C800C1FB66 /* AwardsView.swift */,
 				A8E1B482267B7972005E98AA /* GradientRectangles.swift */,
 				435905972916B97F00CC7B06 /* WinnerView.swift */,
+				431E4DE629194FA200F7D513 /* TextView.swift */,
 				43697DB62916FB8200834983 /* IconView.swift */,
 				A8E1B484267B7978005E98AA /* PathView.swift */,
 				A8E1B480267B7967005E98AA /* CurvesView.swift */,
@@ -168,6 +171,7 @@
 				A89D0931267B76D400C1FB66 /* AwardsCollectionAppApp.swift in Sources */,
 				A89D0940267B777E00C1FB66 /* StarterView.swift in Sources */,
 				A8E1B483267B7972005E98AA /* GradientRectangles.swift in Sources */,
+				431E4DE729194FA200F7D513 /* TextView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

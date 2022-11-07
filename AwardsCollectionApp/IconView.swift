@@ -7,7 +7,7 @@
 
 import SwiftUI
 struct IconView: View {
-    
+    let color: Color
     let startAnimation: Bool
     let quality: Int
     
@@ -16,7 +16,7 @@ struct IconView: View {
             Image(systemName: "seal.fill")
                 .resizable()
                 .frame(width: 300, height: 300)
-                .foregroundColor(quality > 2 ? .orange : .purple)
+                .foregroundColor(color)
                 .shadow(radius: 10)
 
             Image(systemName: quality > 2 ? "crown" : "multiply")
@@ -37,6 +37,6 @@ struct IconView: View {
 
 struct IconView_Previews: PreviewProvider {
     static var previews: some View {
-        IconView(startAnimation: true, quality: 3)
+        IconView(color: .orange, startAnimation: true, quality: 3)
     }
 }

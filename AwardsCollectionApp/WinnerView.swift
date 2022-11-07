@@ -7,22 +7,45 @@
 
 import SwiftUI
 
+
+
 struct WinnerView: View {
     @State private var startAnimation = false
-
+    @State private var text = ""
     @State private var quality = 0
+    @State private var color = Color.red
+
     var body: some View {
         ZStack{
             BackgroundView()
             VStack(spacing: 50) {
                 StarsView(quality: $quality, animation: startAnimation)
 
-                IconView(startAnimation: startAnimation, quality: quality)
-                TextView(quality: quality, animation: startAnimation)
+                IconView(color: color, startAnimation: startAnimation, quality: quality)
+                TextView(text: text, quality: quality, animation: startAnimation)
 
                 Button {
                     if startAnimation == false {
                         quality = Int.random(in: 1...5)
+                        switch quality {
+                        case 1:
+                            text = "Loser"
+                            color = .gray
+                        case 2:
+                            text = "Bad"
+                            color = .red
+                        case 3:
+                            text = "Normal"
+                            color = .purple
+                        case 4:
+                            text = "Not Bad"
+                            color = .green
+                        case 5:
+                            text = "Winner"
+                            color = .orange
+                        default:
+                            break
+                        }
                         startAnimation.toggle()
                     } else {
                         startAnimation.toggle()
@@ -73,34 +96,6 @@ struct GoldenStarView: View {
 //    }
 //}
 
-struct TextView: View {
-    let quality: Int
-    let animation: Bool
-    var body: some View {
-        Text(quality > 2 ? "Winner!" : "Loser!")
-            .frame(width: 300)
-            .foregroundColor(quality > 2 ? .green : .red)
-            .font(
-                .system(
-                    size: 70,
-                    weight: .bold,
-                    design: .rounded)
-            )
-            .textCase(Text.Case.uppercase)
-            .rotation3DEffect(
-                .init(
-                    degrees: animation ? 0 : -70),
-                axis: (x: 1, y: 0, z: 0),
-                anchor: .center)
-            .scaleEffect(animation ? 1 : 0.00001)
-            .animation(
-                .interactiveSpring(
-                    response: 1,
-                    dampingFraction: 0.7,
-                    blendDuration: 0.5).delay(0.9),
-                value: animation)
-    }
-}
 
 struct BackgroundView: View {
     var body: some View {
@@ -113,9 +108,10 @@ struct StarsView: View {
 
     @Binding var quality: Int
     let animation: Bool
+    
     var body: some View {
         HStack {
-            ForEach(0..<quality) { _ in
+            ForEach(0..<quality, id: \.self) { _ in
                 GoldenStarView(animation: animation)
             }
         }
